@@ -1,0 +1,18 @@
+{
+  "app": {
+    "address": "0x12d80e449E67634a10B208390a2Aac24bE7Cd284",
+    "@id": "",
+    "name": "onefeedtest",
+    "description": "",
+    "website": "",
+    "git": "",
+    "version": "0.0.1",
+    "permissions": []
+  },
+  "settings": {
+    "encryption_key": "97f82cea955b27ff7955dce39d7793b2a2d15d6f0cafdc915ec8f1af4169e061",
+    "private": false,
+    "storage": "rai",
+    "forced_auth": false
+  }
+}
