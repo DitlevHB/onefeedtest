@@ -1,15 +1,19 @@
-import React, { useEffect } from "react"
-import { useId} from "@backbonedao/react-hooks";
+import React, { useEffect, useState } from "react"
+import { useId, useBackbone } from "@backbonedao/react-hooks";
 
 export default function Hello() {
+  const { authenticate } = useId();
+  const backbone = useBackbone();
 
-  const { id, isAuthenticated, authenticate } = useId();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
-  useEffect(()=>{
-      console.log(id, "id");
-      console.log(isAuthenticated, "isAuth");
-  }, [id, isAuthenticated])
-  
+  useEffect(()=> {
+      backbone.events.on("id:authenticated", () => {
+          debugger;
+          setIsAuthenticated(true);
+      })
+  }, [])
+
   return (
     <>
     {"auth: " + isAuthenticated}
